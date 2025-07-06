@@ -1,5 +1,7 @@
 title: "面试题库"
 description: "程序员面试题目收集与整理"
+baseurl: "/Questions"
+url: "https://xzonn.top"
 
 markdown: kramdown
 kramdown:
@@ -46,26 +48,34 @@ exclude:
   - vendor/
   - Debug/
   - venv/
+  - README.md
 
 algolia:
-  application_id: 'YOUR_APPLICATION_ID'
-  index_name: 'interview_questions'
-  search_only_api_key: 'YOUR_SEARCH_ONLY_API_KEY'
+  application_id: "5QVIJPXEHT"
+  index_name: "interview_questions"
+  search_only_api_key: "148f2d0a222861b72fc1b3afed298ecd"
   powered_by: true
+  files_to_exclude:
+    - index.html
+    - categories.html
+    - search.html
+    - category/
+    - pages/
   settings:
     hitsPerPage: 10
-    attributesToRetrieve:
+    searchableAttributes:
       - title
       - excerpt
       - content
       - category
+      - unordered(tags)
+      - unordered(content)
+    attributesToHighlight:
+      - title
       - tags
-      - difficulty
-      - url
-      - date
+      - content
     attributesForFaceting:
-      - category
-      - tags
-      - difficulty
+      - unordered(tags)
+      - title
     customRanking:
       - 'desc(date)'
