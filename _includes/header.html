@@ -1,0 +1,32 @@
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+          <a class="navbar-brand" href="{{ '/' | relative_url }}">
+            <i class="fas fa-code me-2"></i>{{ site.title }}
+          </a>
+          
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="{{ '/' | relative_url }}">首页</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ '/categories.html' | relative_url }}">分类</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                  快速导航
+                </a>
+                <ul class="dropdown-menu">{% assign categories = site.posts | map: 'category' | uniq | sort %}{% for category in categories %}
+                    <li><a class="dropdown-item" href="{{ '/category/' | relative_url }}{{ category | slugify }}.html">{{ category }}</a></li>{% endfor %}
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>

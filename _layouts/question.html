@@ -1,0 +1,60 @@
+---
+layout: default
+---
+    <div class="row">
+      <div class="col-lg-8">
+        <article class="question-detail">
+          <header class="mb-4">
+            <h1 class="display-6">{{ page.title }}</h1>{% if page.category %}
+            <div class="mb-2">
+              <a class="badge bg-primary" href="{{ '/category/' | relative_url }}{{ page.category | slugify }}.html">{{ page.category }}</a>
+            </div>{% endif %}{% if page.tags %}
+            <div class="mb-3">{% for tag in page.tags %}
+              <span class="badge bg-secondary me-1">{{ tag }}</span>{% endfor %}
+            </div>{% endif %}{% if page.difficulty %}
+            <div class="mb-3">
+              <span class="badge {% if page.difficulty == '简单' %}bg-success{% elsif page.difficulty == '中等' %}bg-warning{% else %}bg-danger{% endif %}">
+                {{ page.difficulty }}
+              </span>
+            </div>
+            {% endif %}
+          </header>
+          
+          <div class="content">
+{{ content }}
+          </div>
+          
+          <footer class="mt-4 pt-4 border-top">
+            <div class="row">
+              <div class="col-md-6">
+                <small class="text-muted">{% if page.date %}
+                  更新时间: {{ page.date | date: "%Y-%m-%d" }}{% endif %}
+                </small>
+              </div>
+              <div class="col-md-6 text-md-end">
+                <a href="{{ '/' | relative_url }}" class="btn btn-outline-primary btn-sm">
+                  返回首页
+                </a>
+              </div>
+            </div>
+          </footer>
+        </article>
+      </div>
+      
+      <div class="col-lg-4">
+        <aside class="sidebar">
+          <div class="card">
+            <div class="card-header">
+              <h5 class="card-title mb-0">相关题目</h5>
+            </div>
+            <div class="card-body">{% assign related_questions = site.posts | where: "category", page.category | limit: 5 %}{% for question in related_questions %}{% unless question.url == page.url %}
+              <div class="mb-2">
+                <a href="{{ question.url | relative_url }}">
+                  {{ question.title }}
+                </a>
+              </div>{% endunless %}{% endfor %}
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>

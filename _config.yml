@@ -1,0 +1,71 @@
+title: "面试题库"
+description: "程序员面试题目收集与整理"
+
+markdown: kramdown
+kramdown:
+  syntax_highlighter_opts:
+    css_class: highlight
+highlighter: rouge
+plugins:
+  - jekyll-algolia
+  - jekyll-archives
+  - jekyll-feed
+  - jekyll-relative-links
+  - jekyll-paginate
+  - jekyll-sitemap
+
+collections:
+  posts:
+    output: true
+    permalink: /:collection/:path.html
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "question"
+
+sass:
+  style: compressed
+
+paginate: 12
+paginate_path: "/pages/:num/"
+
+jekyll-archives:
+  layout: category
+  enabled: 
+    - categories
+  permalinks:
+    category: "/category/:name.html"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/
+  - Debug/
+  - venv/
+
+algolia:
+  application_id: 'YOUR_APPLICATION_ID'
+  index_name: 'interview_questions'
+  search_only_api_key: 'YOUR_SEARCH_ONLY_API_KEY'
+  powered_by: true
+  settings:
+    hitsPerPage: 10
+    attributesToRetrieve:
+      - title
+      - excerpt
+      - content
+      - category
+      - tags
+      - difficulty
+      - url
+      - date
+    attributesForFaceting:
+      - category
+      - tags
+      - difficulty
+    customRanking:
+      - 'desc(date)'

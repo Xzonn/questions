@@ -1,0 +1,32 @@
+    <footer class="bg-secondary text-light py-4 mt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h5>{{ site.title }}</h5>
+            <p class="text-muted">{{ site.description }}</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <p class="text-muted">
+              © {{ 'now' | date: "%Y" }} {{ site.title }}. 
+              <small>Powered by Jekyll</small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Pangu.js for automatic spacing -->
+    <script src="https://cdn.jsdelivr.net/npm/pangu@7.2.0/dist/browser/pangu.umd.min.js"></script>
+
+    <!-- Google Ads -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8317643192080236" crossorigin="anonymous"></script>
+
+    <script>
+      // Initialize syntax highlighting
+      document.addEventListener('DOMContentLoaded', function() {
+        pangu.autoSpacingPage();
+      });
+    </script>
