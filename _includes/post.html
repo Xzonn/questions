@@ -9,7 +9,7 @@
       <p class="card-text text-muted small">
         {{ include.post.excerpt | strip_html | truncate: 100 }}
       </p>{% endif %}
-      
+
       <div class="d-flex justify-content-between align-items-center">
         <div>{% assign _category = include.category | default: include.post.category %}{% if _category and _category != "-" %}
           <a class="badge bg-primary" href="{{ '/category/' | relative_url }}{{ _category | slugify }}.html">{{ _category }}</a>{% endif %}{% if include.post.difficulty %}

@@ -8,7 +8,7 @@
     <li class="page-item">
       <a class="page-link" href="{{ '/' | relative_url }}#recent-questions">首页</a>
     </li>{% endif %}
-    
+
     <!-- 上一页 -->{% if paginator.previous_page %}
     <li class="page-item">
       <a class="page-link" href="{% if paginator.previous_page == 1 %}{{ '/' | relative_url }}{% else %}{{ paginator.previous_page_path | relative_url }}{% endif %}#recent-questions">&laquo; 上一页</a>
@@ -16,7 +16,7 @@
     <li class="page-item disabled">
       <span class="page-link">&laquo; 上一页</span>
     </li>{% endif %}
-    
+
     <!-- 页码 -->{% assign start = paginator.page | minus: 4 | at_least: 1 %}{% assign end = paginator.page | plus: 4 | at_most: paginator.total_pages %}{% if start > 1 %}
     <li class="page-item disabled">
       <span class="page-link">...</span>
@@ -30,7 +30,7 @@
     <li class="page-item disabled">
       <span class="page-link">...</span>
     </li>{% endif %}
-    
+
     <!-- 下一页 -->{% if paginator.next_page %}
     <li class="page-item">
       <a class="page-link" href="{{ paginator.next_page_path | relative_url }}#recent-questions">下一页 &raquo;</a>
@@ -38,7 +38,7 @@
     <li class="page-item disabled">
       <span class="page-link">下一页 &raquo;</span>
     </li>{% endif %}
-    
+
     <!-- 尾页 -->{% if paginator.page == paginator.total_pages %}
     <li class="page-item disabled">
       <span class="page-link">尾页</span>
@@ -47,7 +47,7 @@
       <a class="page-link" href="{{ site.paginate_path | relative_url | replace: ':num', paginator.total_pages }}#recent-questions">尾页</a>
     </li>{% endif %}
   </ul>
-  
+
   <!-- 页面信息 -->
   <div class="text-center mt-3">
     <small class="text-muted">

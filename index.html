@@ -23,16 +23,16 @@ layout: default
         最新题目{% else %}
         所有题目 - 第 {{ paginator.page }} 页{% endif %}
       </h2>
-      
+
       <div class="row">{% for question in paginator.posts %}
 {% include post.html post=question class="col-md-6 mb-3" %}{% endfor %}
       </div>
-      
+
       <!-- 分页导航 -->
 {% include pagination.html %}
     </section>
   </div>
-  
+
   <div class="col-lg-4">
     <aside class="sidebar">
       <div class="card mb-4">
@@ -54,7 +54,7 @@ layout: default
           </div>
         </div>
       </div>
-      
+
       <div class="card">
         <div class="card-header">
           <h5 class="card-title mb-0">全部分类</h5>

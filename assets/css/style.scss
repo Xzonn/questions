@@ -28,6 +28,12 @@ a {
   }
 }
 
+.adsbygoogle {
+  display: block;
+  margin: 1rem auto;
+  text-align: center;
+}
+
 // Navigation
 .navbar-brand {
   font-weight: bold;
@@ -44,7 +50,7 @@ a {
   border: none;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-  
+
   &:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0,0,0,0.15);
@@ -56,12 +62,12 @@ a {
   .content {
     font-size: 1.1rem;
     line-height: 1.8;
-    
+
     h1, h2, h3, h4, h5, h6 {
       margin-top: 2rem;
       margin-bottom: 1rem;
     }
-    
+
     pre {
       background: #f8f9fa;
       border: 1px solid #e9ecef;
@@ -74,14 +80,14 @@ a {
         padding: 0;
       }
     }
-    
+
     code {
       background: #f8f9fa;
       padding: 0.2rem 0.4rem;
       border-radius: 0.25rem;
       font-size: 0.9em;
     }
-    
+
     blockquote {
       border-left: 4px solid #007bff;
       padding-left: 1rem;
@@ -103,7 +109,7 @@ a {
 .category-section {
   border-bottom: 1px solid #e9ecef;
   padding-bottom: 2rem;
-  
+
   &:last-child {
     border-bottom: none;
   }
@@ -113,16 +119,16 @@ a {
 @media (max-width: 768px) {
   .hero-section {
     padding: 2rem 1rem !important;
-    
+
     .display-4 {
       font-size: 2rem;
     }
   }
-  
+
   .question-detail .content {
     font-size: 1rem;
   }
-  
+
   .card-title {
     font-size: 1.1rem;
   }
@@ -136,16 +142,16 @@ a {
 // Badges
 .badge {
   font-size: 0.75em;
-  
+
   &.bg-success {
     background-color: #28a745 !important;
   }
-  
+
   &.bg-warning {
     background-color: #ffc107 !important;
     color: #212529 !important;
   }
-  
+
   &.bg-danger {
     background-color: #dc3545 !important;
   }

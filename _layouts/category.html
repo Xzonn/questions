@@ -15,7 +15,7 @@ layout: default
         <i class="fas fa-folder me-2"></i>{{ page.title }}
         <span class="badge bg-primary ms-2">{{ page.posts.size }}</span>
       </h2>
-      
+
       <div class="row">{% for question in page.posts %}
 {% include post.html post=question category="-" %}{% endfor %}
       </div>
@@ -27,11 +27,11 @@ layout: default
 document.getElementById('searchInput').addEventListener('input', function() {
   const searchTerm = this.value.toLowerCase();
   const questionCards = document.querySelectorAll('.question-card');
-  
+
   questionCards.forEach(card => {
     const title = card.querySelector('.card-title a').textContent.toLowerCase();
     const content = card.querySelector('.card-text')?.textContent.toLowerCase() || '';
-    
+
     if (title.includes(searchTerm) || content.includes(searchTerm)) {
       card.closest('.col-lg-6').style.display = 'block';
     } else {

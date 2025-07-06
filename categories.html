@@ -14,7 +14,7 @@ title: 分类浏览
         <a href="{{ '/category/' | relative_url }}{{ category.name | slugify }}.html">{{ category.name }}</a>
         <span class="badge bg-primary ms-2">{{ category.items.size }}</span>
       </h2>
-      
+
       <div class="row">{% for question in category.items limit: 3 %}
 {% include post.html post=question category="-" %}{% endfor %}{% if category.items.size > 3 %}
         <div class="col-12">
