@@ -15,6 +15,7 @@ plugins:
   - jekyll-relative-links
   - jekyll-paginate
   - jekyll-sitemap
+future: true
 
 collections:
   posts:
