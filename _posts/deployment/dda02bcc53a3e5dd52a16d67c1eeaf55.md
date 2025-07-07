@@ -1,7 +1,7 @@
 ---
 title: 如何配置 Nginx 作为反向代理？
 category: 部署与运维
-date: 2025-07-06
+date: 2025-07-06 21:05
 difficulty: 中等
 excerpt: 介绍如何在 Nginx 中设置反向代理以实现负载均衡和缓存等功能。
 tags:

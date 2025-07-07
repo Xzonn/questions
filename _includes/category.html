@@ -1,0 +1,39 @@
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h1>{{ include.title }}</h1>
+  <div>
+    <input type="text" id="searchInput" class="form-control" placeholder="搜索题目...">
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12 mb-5">
+    <div class="category-section">
+      <h2 id="{{ include.title | slugify }}" class="h3 mb-3">
+        <i class="fas fa-folder me-2"></i>{{ include.title }}
+        <span class="badge bg-primary ms-2">{{ include.posts.size }}</span>
+      </h2>
+
+      <div class="row">{% for question in include.posts %}
+{% include post.html post=question category=include.category difficulty=include.difficulty %}{% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.getElementById('searchInput').addEventListener('input', function() {
+  const searchTerm = this.value.toLowerCase();
+  const questionCards = document.querySelectorAll('.question-card');
+
+  questionCards.forEach(card => {
+    const title = card.querySelector('.card-title a').textContent.toLowerCase();
+    const content = card.querySelector('.card-text')?.textContent.toLowerCase() || '';
+
+    if (title.includes(searchTerm) || content.includes(searchTerm)) {
+      card.closest('.col-lg-6').style.display = 'block';
+    } else {
+      card.closest('.col-lg-6').style.display = 'none';
+    }
+  });
+});
+</script>

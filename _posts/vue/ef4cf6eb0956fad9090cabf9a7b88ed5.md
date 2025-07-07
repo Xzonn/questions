@@ -1,7 +1,7 @@
 ---
 title: Vue 中的 v-show 和 v-if 有什么区别？
 category: Vue
-date: 2025-07-06
+date: 2025-07-06 21:08
 difficulty: 中等
 excerpt: 比较分析 Vue 中 v-show 和 v-if 的区别，包括它们的工作原理、性能影响和适用场景。
 tags:

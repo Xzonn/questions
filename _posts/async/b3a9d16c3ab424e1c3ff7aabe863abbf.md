@@ -1,7 +1,7 @@
 ---
 title: 如何实现 Promise.race？
 category: 异步编程
-date: 2025-07-06
+date: 2025-07-06 19:58
 excerpt: 实现 Promise.race 方法及其状态处理机制。
 tags:
 - Promise

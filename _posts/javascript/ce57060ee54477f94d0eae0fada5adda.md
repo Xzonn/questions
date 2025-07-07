@@ -1,7 +1,11 @@
 ---
 title: 如何设置和删除 Cookie？
 category: JavaScript
-date: 2025-07-06
+date: 2025-07-06 20:00
+difficulty: 中等
+excerpt: 介绍了在 JavaScript 中通过操作 document.cookie 来实现 Cookie 的设置与删除，包括参数配置、示例代码以及跨浏览器兼容性。
+tags:
+- Cookie
 ---
 设置和删除 Cookie 可以通过客户端 JavaScript 实现，方法主要依赖于 `document.cookie` API。  
 以下是详细的实现方案：  

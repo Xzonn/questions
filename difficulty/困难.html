@@ -1,0 +1,5 @@
+---
+title: 困难
+layout: default
+---
+{% assign posts = site.posts | where: "difficulty", "困难" %}{% include category.html title=page.title posts=posts difficulty="-" %}

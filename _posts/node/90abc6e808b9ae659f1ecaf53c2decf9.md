@@ -1,7 +1,13 @@
 ---
-title: 如何得知目前 Node.js 版本的 V8 版本号？
+title: 如何获取 Node.js 当前运行的 V8 引擎版本号？
 category: Node.js
-date: 2025-07-07
+date: 2025-07-07 12:42
+difficulty: 简单
+excerpt: 通过在 Node.js REPL 中输入 process.versions.v8 来获取当前 V8 引擎的版本号。
+tags:
+- V8
+- V8引擎
+- 版本控制
 ---
 要获取当前环境中 Node.js 版本所使用的 V8 引擎版本号，可以通过在终端（如命令行或 shell）中执行 Node.js REPL 进入交互模式，然后输出 `process.versions.v8` 属性。
 

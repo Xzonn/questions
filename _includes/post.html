@@ -12,10 +12,10 @@
 
       <div class="d-flex justify-content-between align-items-center">
         <div>{% assign _category = include.category | default: include.post.category %}{% if _category and _category != "-" %}
-          <a class="badge bg-primary" href="{{ '/category/' | relative_url }}{{ _category | slugify }}.html">{{ _category }}</a>{% endif %}{% if include.post.difficulty %}
-          <span class="badge {% if include.post.difficulty == '简单' %}bg-success{% elsif include.post.difficulty == '中等' %}bg-warning{% else %}bg-danger{% endif %}">
+          <a class="badge bg-primary" href="{{ '/category/' | relative_url }}{{ _category | slugify }}.html">{{ _category }}</a>{% endif %}{% assign _difficulty = include.difficulty | default: include.post.difficulty %}{% if _difficulty and _difficulty != "-" %}
+          <a class="badge {% if _difficulty == '简单' %}bg-success{% elsif _difficulty == '中等' %}bg-warning{% else %}bg-danger{% endif %}" href="{{ '/difficulty/' | relative_url }}{{ _difficulty | slugify }}.html">
             {{ include.post.difficulty }}
-          </span>{% endif %}{% if include.post.tags %}{% for tag in include.post.tags limit: 3 %}
+          </a>{% endif %}{% if include.post.tags %}{% for tag in include.post.tags limit: 3 %}
           <span class="badge bg-secondary">{{ tag }}</span>{% endfor %}{% endif %}
         </div>{% if include.post.date %}
         <span class="text-muted small">

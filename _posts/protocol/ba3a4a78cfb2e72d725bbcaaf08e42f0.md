@@ -1,7 +1,7 @@
 ---
 title: 常见的 HTTP 请求头有哪些？
 category: 网络协议
-date: 2025-07-07
+date: 2025-07-07 10:59
 difficulty: 简单
 excerpt: 介绍常见的 HTTP 请求头及其作用。
 tags:

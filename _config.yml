@@ -1,6 +1,6 @@
 title: "面试题库"
 description: "程序员面试题目收集与整理"
-baseurl: "/Questions"
+baseurl: "/questions"
 url: "https://xzonn.top"
 
 markdown: kramdown
@@ -16,6 +16,7 @@ plugins:
   - jekyll-paginate
   - jekyll-seo-tag
   - jekyll-sitemap
+timezone: Asia/Shanghai
 future: true
 
 collections:
@@ -35,7 +36,7 @@ defaults:
 sass:
   style: compressed
 
-paginate: 12
+paginate: 24
 paginate_path: "/pages/:num/"
 
 jekyll-archives:
@@ -60,14 +61,15 @@ algolia:
   index_name: "interview_questions"
   search_only_api_key: "148f2d0a222861b72fc1b3afed298ecd"
   powered_by: true
+  nodes_to_index: 'p,h2,h3,h4,li,blockquote,table'
   files_to_exclude:
     - index.html
-    - categories.html
     - search.html
     - category/
+    - difficulty/
     - pages/
   settings:
-    hitsPerPage: 10
+    hitsPerPage: 24
     searchableAttributes:
       - title
       - category

@@ -1,7 +1,13 @@
 ---
-title: 什么是 SPA（单页应用）？
+title: 什么是 SPA？它是如何工作的？
 category: JavaScript
-date: 2025-07-06
+date: 2025-07-06 21:08
+difficulty: 简单
+excerpt: SPA 是一种通过单次加载 HTML、CSS 和 JavaScript，后续内容由 JavaScript 动态更新页面的 Web 应用开发模式。
+tags:
+- 单页应用
+- SPA
+- 框架
 ---
 SPA (Single Page Application) 是一种通过**单次加载 HTML、CSS 和 JavaScript，后续内容由 JavaScript 动态更新页面**的 Web 应用开发模式。以下从机制和特性进行说明：
 

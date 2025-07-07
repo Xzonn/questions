@@ -1,7 +1,12 @@
 ---
-title: position:sticky如何工作？适用于哪些场景？
+title: position:sticky 如何工作？适用于哪些场景？
 category: CSS
-date: 2025-07-07
+date: 2025-07-07 12:51
+difficulty: 中等
+excerpt: 解析 CSS 中的 position:sticky 属性的工作原理及适用场景，包括导航条固定和表格表头。
+tags:
+- 布局
+- 属性
 ---
 ### 工作方式
 `position: sticky`是相对定位（relative）和固定定位（fixed）的结合体，工作机制分两种状态：

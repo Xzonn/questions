@@ -1,7 +1,7 @@
 ---
 title: 如何给 GraphQL 设计合理的 Rate Limit？
 category: 前端安全
-date: 2025-07-07
+date: 2025-07-07 12:06
 ---
 设计 GraphQL 的 Rate Limit（速率限制）主要针对控制客户端请求的頻率，以防止 API 滥用、爬虫攻击和 DOS 攻击，从而保障 API 的稳定性和安全性。合理的设计应考虑工具集成、策略配置和实际实践：
 

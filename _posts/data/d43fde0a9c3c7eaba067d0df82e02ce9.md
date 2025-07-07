@@ -1,7 +1,7 @@
 ---
 title: Redis 在后端应用中有哪些典型应用场景？
 category: 数据管理
-date: 2025-07-07
+date: 2025-07-07 12:19
 difficulty: 中等
 excerpt: 探讨 Redis 在缓存、计数器、会话管理及限流等多场景的应用及其代码实现。
 tags:
