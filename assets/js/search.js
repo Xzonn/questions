@@ -3,7 +3,7 @@
 "use strict";
 
 const slugify = (str) => {
-  return str
+  return ("" + str)
     .toLowerCase()
     .replace(/[\s\.\-]+/g, "-");
 }
@@ -18,7 +18,7 @@ window.addEventListener("load", () => {
   const hitTemplate = (hit) => {
     const url = hit.external_url || hit.url;
     const title = hit._highlightResult.title.value;
-    const category = (hit._highlightResult.category || {}.value) || "";
+    const category = (hit._highlightResult.category || {}).value || "";
     const tags = (hit._highlightResult.tags || []).map((x) => x.value);
     const content = (hit._highlightResult.content || []).value;
 
