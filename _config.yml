@@ -14,6 +14,7 @@ plugins:
   - jekyll-feed
   - jekyll-relative-links
   - jekyll-paginate
+  - jekyll-seo-tag
   - jekyll-sitemap
 future: true
 
@@ -23,6 +24,8 @@ collections:
     permalink: /:collection/:path.html
 
 defaults:
+  - values:
+      lang: "zh_CN"
   - scope:
       path: ""
       type: "posts"
@@ -50,6 +53,7 @@ exclude:
   - Debug/
   - venv/
   - README.md
+  - "*.tar.gz"
 
 algolia:
   application_id: "5QVIJPXEHT"
@@ -66,13 +70,13 @@ algolia:
     hitsPerPage: 10
     searchableAttributes:
       - title
-      - excerpt
-      - content
       - category
+      - difficulty
       - unordered(tags)
       - unordered(content)
     attributesToHighlight:
       - title
+      - category
       - tags
       - content
     attributesForFaceting:

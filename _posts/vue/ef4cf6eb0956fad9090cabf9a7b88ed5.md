@@ -1,7 +1,13 @@
 ---
-title: Vue中的v-show和v-if怎么理解？
+title: Vue 中的 v-show 和 v-if 有什么区别？
 category: Vue
 date: 2025-07-06
+difficulty: 中等
+excerpt: 比较分析 Vue 中 v-show 和 v-if 的区别，包括它们的工作原理、性能影响和适用场景。
+tags:
+- 条件渲染
+- 性能优化
+- Vue.js
 ---
 在 Vue 中, `v-if` 和 `v-show` 都是用于条件性地控制元素的显示与隐藏的指令, 但它们在工作原理、性能影响以及适用场景上有着本质区别。
 
@@ -22,7 +28,7 @@ date: 2025-07-06
 
 3. **适用场景:**  
    - 使用 `v-show` 时适用于频繁切换 (如按钮切换的 UI 效果), 因为它通过简单的 CSS 切换减少渲染性能消耗。例如:
-     ```html
+     ``` vue
      <template>
        <div>
          <button @click="showElement = !showElement">Toggle</button>
@@ -31,7 +37,7 @@ date: 2025-07-06
      </template>
      ```
    - 使用 `v-if` 更适用于条件逻辑复杂或很少变化的场景 (如加载态的全局组件), 避免不必要的初次编译浪费。另外, `v-if` 支持配合 `v-else` 或 `<template>` 标签用于多条件分支, 而 `v-show` 不行。示例如下：
-     ```html
+     ``` vue
      <template>
        <div>
          <p v-if="showElement">Shown element</p>

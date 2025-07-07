@@ -5,7 +5,7 @@ module Jekyll
         if record[:no_list]
           return nil
         end
-        [:anchor, :collection, :excerpt_text, :excerpt_html, :headings, :html, :last_modified_at, :slug, :type].each do |field|
+        [:anchor, :categories, :collection, :excerpt, :excerpt_text, :excerpt_html, :headings, :html, :last_modified_at, :slug, :type].each do |field|
           record.delete(field)
         end
         return record

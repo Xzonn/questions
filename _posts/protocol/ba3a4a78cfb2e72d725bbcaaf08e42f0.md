@@ -1,7 +1,12 @@
 ---
-title: 常见的HTTP请求头有哪些？
+title: 常见的 HTTP 请求头有哪些？
 category: 网络协议
 date: 2025-07-07
+difficulty: 简单
+excerpt: 介绍常见的 HTTP 请求头及其作用。
+tags:
+- HTTP
+- 请求头
 ---
 HTTP 请求头是客户端在请求中向服务器传递附加信息的 key-value 对，常见的类型包括：  
 - **Host**：指定请求资源的主机名（例如，`www.example.com`），用于处理多域名共享 IP 的情况 (如虚拟主机技术)，确保了请求的正确路由。  

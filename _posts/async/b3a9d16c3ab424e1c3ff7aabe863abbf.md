@@ -2,6 +2,11 @@
 title: 如何实现 Promise.race？
 category: 异步编程
 date: 2025-07-06
+excerpt: 实现 Promise.race 方法及其状态处理机制。
+tags:
+- Promise
+- 异步
+- JavaScript
 ---
 Promise.race 是 JavaScript 的 Promise 对象的静态方法，用于接收一组 Promise 实例，当输入对象中的任何一员率先完成或拒绝时，立即进入相应状态，以其结果返回一个新 Promise。实现基于以下原则结合源码，需在语言支持的环境中扩展定义；其核心理念是利用每个 Promise 对象的状态机机制快速响应。具体步骤如下：
 

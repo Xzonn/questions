@@ -15,7 +15,7 @@
           <a class="badge bg-primary" href="{{ '/category/' | relative_url }}{{ _category | slugify }}.html">{{ _category }}</a>{% endif %}{% if include.post.difficulty %}
           <span class="badge {% if include.post.difficulty == '简单' %}bg-success{% elsif include.post.difficulty == '中等' %}bg-warning{% else %}bg-danger{% endif %}">
             {{ include.post.difficulty }}
-          </span>{% endif %}{% if include.post.tags %}{% for tag in include.post.tags limit: 2 %}
+          </span>{% endif %}{% if include.post.tags %}{% for tag in include.post.tags limit: 3 %}
           <span class="badge bg-secondary">{{ tag }}</span>{% endfor %}{% endif %}
         </div>{% if include.post.date %}
         <span class="text-muted small">

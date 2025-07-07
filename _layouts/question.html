@@ -51,12 +51,12 @@ layout: default
             <div class="card-header">
               <h5 class="card-title mb-0">相关题目</h5>
             </div>
-            <div class="card-body">{% assign related_questions = site.posts | where: "category", page.category | limit: 5 %}{% for question in related_questions %}{% unless question.url == page.url %}
+            <div class="card-body">{% assign related_questions = site.posts | where: "category", page.category | sample: 6 %}{% assign _ = 0 %}{% for question in related_questions %}{% if question.url == page.url %}{% continue %}{% else %}
               <div class="mb-2">
                 <a href="{{ question.url | relative_url }}">
                   {{ question.title }}
                 </a>
-              </div>{% endunless %}{% endfor %}
+              </div>{% assign _ = _ | plus: 1 %}{% if _ >= 5 %}{% break %}{% endif %}{% endif %}{% endfor %}
             </div>
           </div>
         </aside>

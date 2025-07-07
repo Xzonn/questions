@@ -1,7 +1,13 @@
 ---
-title: Git rebase 与 merge 的区别是什么？
+title: Git 中的 Rebase 和 Merge 有什么区别？
 category: 工程化与构建
 date: 2025-07-07
+difficulty: 中等
+excerpt: 解释 Git 变基与合并的区别及其适用场景。
+tags:
+- 版本控制
+- Git
+- 开发流程
 ---
 Git 中的 rebase 和 merge 都是用于分支合并的操作，但它们在**工作原理、历史记录处理方式、适用场景和优缺点**等方面有明显差异。以下是详细分析：
 

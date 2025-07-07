@@ -2,6 +2,12 @@
 ---
 "use strict";
 
+const slugify = (str) => {
+  return str
+    .toLowerCase()
+    .replace(/[\s\.\-]+/g, "-");
+}
+
 window.addEventListener("load", () => {
   const search = instantsearch({
     indexName: "interview_questions",
@@ -12,7 +18,7 @@ window.addEventListener("load", () => {
   const hitTemplate = (hit) => {
     const url = hit.external_url || hit.url;
     const title = hit._highlightResult.title.value;
-    const heading = ((hit._highlightResult.headings || []).slice(-1)[0] || {}).value || "";
+    const category = (hit._highlightResult.category || {}.value) || "";
     const tags = (hit._highlightResult.tags || []).map((x) => x.value);
     const content = (hit._highlightResult.content || []).value;
 
@@ -27,12 +33,11 @@ window.addEventListener("load", () => {
     titleLink.innerHTML = title;
     _title.appendChild(titleLink);
 
-    if (heading) {
-      const headingSpan = document.createElement("span");
-      headingSpan.className = "search-list-heading";
-      headingSpan.innerHTML = heading;
-      _title.appendChild(headingSpan);
-    }
+    const categorySpan = document.createElement("a");
+    categorySpan.className = "search-list-category badge bg-primary";
+    categorySpan.href = `${baseUrl}category/${slugify(category)}.html`;
+    categorySpan.innerHTML = category;
+    _title.appendChild(categorySpan);
 
     defineList.appendChild(_title);
 
