@@ -1,11 +1,18 @@
 ---
-title: 如何将 DOM 转化为图片？
+title: 如何将网页内容转换为图片？
 category: 浏览器机制
 date: 2025-07-07 12:07
+difficulty: 中等
+excerpt: 介绍如何将 DOM 元素渲染到 Canvas 并导出为图片的方法，包括使用 html2canvas 库和浏览器原生 API 实现。
+tags:
+- Canvas
+- DOM操作
+- 图像处理
 ---
 将前端页面的 DOM 元素转化为图片的核心原理是将其渲染到 Canvas 上下文，并导出为图片格式（如 PNG 或 JPEG）。以下是常见实现方法及代码示例：  
 
-### 1. 使用 `html2canvas` 库（推荐）  
+### 1. 使用 `html2canvas` 库（推荐）
+
 `html2canvas` 是一个成熟的第三方库，通过将 DOM 元素序列化并绘制到 Canvas 实现转化：  
 
 ```javascript
@@ -29,7 +36,8 @@ html2canvas(element).then(canvas => {
 });
 ```  
 
-### 2. 浏览器原生 API（兼容性有限）  
+### 2. 浏览器原生 API（兼容性有限）
+
 可使用 `foreignObject` 结合 SVG 渲染 DOM 到 Canvas：  
 
 ```javascript
@@ -64,7 +72,8 @@ img.onload = () => {
 img.src = imgUrl;
 ```  
 
-### 关键限制与注意  
+### 关键限制与注意
+
 - **跨域内容**：若 DOM 包含外部资源（如图片），需服务器设置 `Access-Control-Allow-Origin` 头支持跨域。  
 - **性能影响**：大尺寸 DOM 可能导致渲染阻塞（建议分块或降级处理）。  
 - **样式兼容**：复杂 CSS（滤镜、阴影）在 Canvas 中可能呈现不一致。  

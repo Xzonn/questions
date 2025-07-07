@@ -11,45 +11,49 @@ tags:
 ---
 为解决 PC 端和移动端共用域名场景下 CDN 缓存错乱的问题（两套代码但共享域名），可通过以下方案实现：  
 
-### 💻 1. 分离主域（首选方案）  
-   - **独立域名部署**：为 PC 端和移动端分配独立域名（如 `www.site.com` 和 `m.site.com`）。  
-   - **优势**：  
-     - **避免 User-Agent（UA）误判风险**，例如平板设备被错误识别为 PC。  
-     - **提高 CDN 缓存命中率**：CDN 无需根据动态 UA 分配资源。  
+### 💻 1. 分离主域（首选方案）
 
-### 📍 2. 响应头缓存控制（单域名方案）  
-   - **使用 `Vary: User-Agent` 头**：  
-     通过服务器配置（如 Nginx），添加响应头：  
-     ```nginx
-     location / {  
-         add_header Vary "User-Agent";  
-         ...  
-     }  
-     ```  
-     - **作用**：CDN 将不同 UA 的请求视为独立缓存键值。  
-     - **注意**：UA 种类庞大会降低缓存复用率（如摘要 2 所述）。  
+- **独立域名部署**：为 PC 端和移动端分配独立域名（如 `www.site.com` 和 `m.site.com`）。  
+- **优势**：  
+  - **避免 User-Agent（UA）误判风险**，例如平板设备被错误识别为 PC。  
+  - **提高 CDN 缓存命中率**：CDN 无需根据动态 UA 分配资源。  
 
-### ⚙️ 3. 代理层定向分发  
-   - **通过代理判断 UA 返回目标资源**（Nginx 示例）：  
-     ```nginx  
-     location / {  
-         # 默认 PC  
-         root /site/web;  
-         if ($http_user_agent ~* "(iPhone|Android)") {  
-             root /site/mobile; # 移动端路径  
-         }  
-     }  
-     ```  
-   - **风险**：  
-     - UA 可能伪造或被新设备规则覆盖（如摘要 2 案例）。  
-     - 解决方案仍需配合 CDN 清理历史脏数据（详见策略 4）📦。  
+### 📍 2. 响应头缓存控制（单域名方案）
 
-### 🔄 4. CDN 清理和治理  
-   - **刷新缓存**：主动触发 CDN 节点缓存刷新（如用 `.version` 文件或 CDN Purge API）。  
-   - **缓存控制头精细化**：设置缓存失效时间，避免过时资源留存：
-     ```bash  
-     Cache-Control: public, max-age=3600 # 默认 1 小时更新  
-     ```
+- **使用 `Vary: User-Agent` 头**：  
+  通过服务器配置（如 Nginx），添加响应头：  
+  ```nginx
+  location / {  
+      add_header Vary "User-Agent";  
+      ...  
+  }  
+  ```  
+  - **作用**：CDN 将不同 UA 的请求视为独立缓存键值。  
+  - **注意**：UA 种类庞大会降低缓存复用率（如摘要 2 所述）。  
+
+### ⚙️ 3. 代理层定向分发
+
+- **通过代理判断 UA 返回目标资源**（Nginx 示例）：  
+  ```nginx  
+  location / {  
+      # 默认 PC  
+      root /site/web;  
+      if ($http_user_agent ~* "(iPhone|Android)") {  
+          root /site/mobile; # 移动端路径  
+      }  
+  }  
+  ```  
+- **风险**：  
+  - UA 可能伪造或被新设备规则覆盖（如摘要 2 案例）。  
+  - 解决方案仍需配合 CDN 清理历史脏数据（详见策略 4）📦。  
+
+### 🔄 4. CDN 清理和治理
+
+- **刷新缓存**：主动触发 CDN 节点缓存刷新（如用 `.version` 文件或 CDN Purge API）。  
+- **缓存控制头精细化**：设置缓存失效时间，避免过时资源留存：
+  ```bash  
+  Cache-Control: public, max-age=3600 # 默认 1 小时更新  
+  ```
 
 ### ✅ 最佳实践总结
 
