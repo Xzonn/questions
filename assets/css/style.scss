@@ -166,3 +166,21 @@ footer {
 html {
   scroll-behavior: smooth;
 }
+
+// Search
+.search-box {
+  svg {
+    fill: #fff;
+  }
+}
+
+.search-poweredby {
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}
+
+.ais-PoweredBy {
+  width: fit-content;
+}
