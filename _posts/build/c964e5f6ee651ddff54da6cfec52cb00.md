@@ -13,7 +13,7 @@ tags:
 
 1. **数据收集**: 从网站上各页面的内容、标题和元数据（如 HTML meta 标签）中提取所需信息，将其组织为一个数据源。可以使用工具如爬虫或数据抓取脚本。  
 
-2. **数据索引**: 使用搜索引擎库或云服务（如 Elasticsearch、Algolia 或腾讯云的云搜索服务) 创建高效索引库，以便快速检索目标内容。基本代码如下：  
+2. **数据索引**: 使用搜索引擎库或云服务（如 Elasticsearch、Algolia 或腾讯云的云搜索服务） 创建高效索引库，以便快速检索目标内容。基本代码如下：  
 ```javascript
 // 假设使用 Elasticsearch 建立索引库
 import esClient from '@elastic/elasticsearch';

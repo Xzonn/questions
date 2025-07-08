@@ -15,7 +15,7 @@ HTTP 请求头是客户端在请求中向服务器传递附加信息的 key-valu
 - **Content-Type**：适用于 POST、PUT 等请求方式，指定消息正文中的数据格式类型（例如 `Content-Type: application/x-www-form-urlencoded` 或 `Content-Type: application/json`）。  
 
 其他常见请求头通常在请求中起到控制作用：
-- 缓存相关头字段如 **Cache-Control**、**Expires**（摘要中未重点出现，为完整介绍补充常见的通用性）。
+- 缓存相关头字段如 **Cache-Control**、**Expires**。
 - 认证类头字段如 **Authorization**（如在包含 JWT token 的场景中）。
   
 相关编码示例：  
