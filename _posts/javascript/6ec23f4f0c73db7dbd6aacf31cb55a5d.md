@@ -1,7 +1,7 @@
 ---
 title: 什么是 TypedArray？
 category: JavaScript
-date: 2025-07-09 12:14:24
+date: 2025-07-09 12:14
 difficulty: 中等
 excerpt: TypedArray 是 JavaScript 的类数组结构，用于高效处理二进制数据。它依赖于 ArrayBuffer，并通过固定元素类型提供高性能的数据操作。
 tags:

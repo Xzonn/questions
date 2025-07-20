@@ -1,7 +1,7 @@
 ---
 title: HTML 元素的默认 display 属性是多少？
 category: HTML
-date: 2025-07-08 11:21:46
+date: 2025-07-08 11:21
 difficulty: 简单
 excerpt: HTML 元素的默认 display 属性取决于其类型，分为 block、inline 和 list-item 等。
 tags:

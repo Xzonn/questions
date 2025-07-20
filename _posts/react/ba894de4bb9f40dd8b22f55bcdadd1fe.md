@@ -1,7 +1,7 @@
 ---
 title: React Hooks 的工作原理是什么？
 category: React
-date: 2025-07-08 11:31:38
+date: 2025-07-08 11:31
 difficulty: 困难
 excerpt: 解释 React Hooks 的内部机制，包括链表结构和闭包的使用。
 tags:

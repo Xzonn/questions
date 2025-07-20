@@ -1,7 +1,7 @@
 ---
 title: 如何将一维数组转换为二维数组？
 category: JavaScript
-date: 2025-07-09 12:29:03
+date: 2025-07-09 12:29
 difficulty: 简单
 excerpt: 探讨了多种方法，包括使用 for 循环、reduce、while 循环和 Array.from，实现了一维数组到二维数组的转换。
 tags:

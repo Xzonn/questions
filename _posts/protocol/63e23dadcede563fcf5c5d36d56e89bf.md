@@ -1,7 +1,7 @@
 ---
 title: 如何实现前端的单点登录？
 category: 网络协议
-date: 2025-07-08 13:05:47
+date: 2025-07-08 13:05
 difficulty: 困难
 excerpt: 介绍多种单点登录实现方案，包括 Cookie 共享、Token 与认证中心以及标准化协议，讨论安全性及跨域处理。
 tags:
